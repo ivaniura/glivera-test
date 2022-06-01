@@ -9,7 +9,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const sync = require("browser-sync").create();
 
 function html() {
-    return src("src/**/*.pug")
+    return src("src/index.pug")
         .pipe(pug({ pretty: true }))
         .pipe(dest("public"));
 }

@@ -1,0 +1,283 @@
+.container {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 70px auto;
+    grid-template-areas:
+        "main_block search_block"
+        "main_block sidebar_block";
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 25px;
+    @include smallScreen {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "search_block"
+            "main_block"
+            "sidebar_block";
+        gap: 30px;
+        margin-top: 50px;
+    }
+    .main_block {
+        grid-area: main_block;
+        padding-right: 60px;
+        margin-right: 60px;
+        border-right: #ebeced 1px solid;
+        @include smallScreen {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: 300;
+            margin-top: 0;
+        }
+        .post {
+            display: flex;
+            overflow: hidden;
+            flex-direction: row;
+            border-bottom: #ebeced 1px solid;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            @include smallScreen {
+                flex-direction: column;
+                &.mobile_hidden {
+                    display: none;
+                }
+            }
+            .post__image {
+                width: 35%;
+                align-self: center;
+                @include smallScreen {
+                    width: 100%;
+                }
+                img {
+                    vertical-align: top;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .post__content {
+                width: 65%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-left: 40px;
+                @include smallScreen {
+                    width: 100%;
+                    padding-top: 20px;
+                    padding-left: 0;
+                }
+                .intro_text {
+                    font-size: 24px;
+                    font-weight: 300;
+                    padding-bottom: 10px;
+                }
+                .details {
+                    .details__author {
+                        display: inline-block;
+                    }
+                    .details__date {
+                        display: inline-block;
+                        color: #889099;
+                        &:before {
+                            content: "|";
+                            margin: 0 10px;
+                        }
+                    }
+                    .details__tags {
+                        margin: 10px 0;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                        color: #4cb649;
+                    }
+                    .details__comments {
+                        color: #889099;
+                        .fa-message {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .older_posts {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 70px;
+            border-radius: 25px;
+            border: #4cb649 1px solid;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: #4cb649;
+            background: #fff;
+        }
+    }
+    .search_block {
+        grid-area: search_block;
+    }
+    .sidebar_block {
+        grid-area: sidebar_block;
+    }
+}
+
+.pricing_block {
+    color: #fff;
+    background: linear-gradient(135deg, #3d4251 0%, #272b35 100%);
+    .pricing_container {
+        width: 100%;
+        max-width: 1250px;
+        margin: 100px auto 0;
+        padding: 70px 25px 50px;
+        text-align: center;
+        @include smallScreen {
+            margin: 30px auto 0;
+        }
+        h2 {
+            font-size: 48px;
+            font-weight: 300;
+        }
+        .blocks {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            @include smallScreen {
+                flex-direction: column;
+            }
+            .item {
+                width: 380px;
+                height: 340px;
+                margin: 10px;
+                padding: 40px;
+                border: #ebeced 1px solid;
+                border-radius: 4px;
+                background-color: #fff;
+                color: #22252e;
+                @include smallScreen {
+                    width: 100%;
+                    max-width: 500px;
+                }
+                .period {
+                    font-size: 18px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                }
+                hr.pricing_top {
+                    width: 24px;
+                    border: 0;
+                    border-top: #4cb649 2px solid;
+                }
+                .price {
+                    display: flex;
+                    justify-content: center;
+                    font-weight: 300;
+                    .sign {
+                        margin-top: 16px;
+                        margin-right: 5px;
+                        font-size: 24px;
+                    }
+                    .sum {
+                        font-size: 56px;
+                    }
+                    .by_month {
+                        margin-top: 42px;
+                        margin-left: 2px;
+                        font-size: 24px;
+                    }
+                }
+                hr.pricing_middle {
+                    width: 200px;
+                    border: 0;
+                    border-top: #ebeced 1px solid;
+                }
+                .terms {
+                    margin: 30px 0;
+                    del {
+                        color: #f24458;
+                        margin-right: 5px;
+                    }
+                }
+                button {
+                    display: block;
+                    margin: 0 auto;
+                    padding: 10px 70px;
+                    border-radius: 25px;
+                    border: #4cb649 1px solid;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    color: #4cb649;
+                    background: #fff;
+                }
+                &.attention {
+                    height: 380px;
+                    border: #4cb649 4px solid;
+                    @include smallScreen {
+                        height: 340px;
+                        border: #FF8D00 4px solid;
+                    }
+                    button {
+                        color: #fff;
+                        background: linear-gradient(#4cb649, #5ddf5a);
+                    }
+                }
+            }
+        }
+        .ways_to_pay {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            @include smallScreen {
+                gap: 20px 10px;
+            }
+            span {
+                margin-right: 20px;
+                font-size: 18px;
+                font-weight: 300;
+                @include smallScreen {
+                    width: 100%;
+                    margin-bottom: 30px;
+                }
+            }
+            .bank_item {
+                margin: 0 15px;
+            }
+        }
+        .links {
+            margin-top: 30px;
+            @include smallScreen {
+                margin-top: 50px;
+            }
+            ul {
+                list-style: none;
+                padding-left: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                @include smallScreen {
+                    flex-direction: column;
+                    gap: 30px;
+                }
+                li {
+                    margin: 0 30px;
+                    a {
+                        font-weight: 500;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        color: #4cb649;
+                        span {
+                            position: absolute;
+                            margin-top: -3px;
+                            margin-left: 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

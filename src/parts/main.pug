@@ -1,0 +1,74 @@
+.container
+    main.main_block
+        h2 Recent Posts
+        include blogposts
+    include search
+    include sidebar
+
+.pricing_block
+    .pricing_container
+        h2 Sign up today – 7 day money back guarantee
+        .blocks
+            .item
+                .period Monthly
+                hr.pricing_top
+                .price
+                    .sign $
+                    .sum 6.95
+                    .by_month /mo.
+                hr.pricing_middle
+                .terms Includes all VPN features.
+                button Sign Up
+
+            .item.attention
+                .period Two Years
+                hr.pricing_top
+                .price
+                    .sign $
+                    .sum 2.91
+                    .by_month /mo.
+                hr.pricing_middle
+                .terms
+                    del $166.80
+                    span $69.95 per two years
+                    br
+                    strong Save 58%*
+                button Sign Up
+            .item
+                .period Yearly
+                hr.pricing_top
+                .price
+                    .sign $
+                    .sum 3.33
+                    .by_month /mo.
+                hr.pricing_middle
+                .terms
+                    del $83.40
+                    span $39.95 per two years
+                    br
+                    strong Save 52%*
+                button Sign Up
+        .ways_to_pay
+            span Ways to pay:
+            .bank_item
+                img(src="images/visa.png", alt="Visa")
+            .bank_item
+                img(src="images/mastercard.png", alt="MasterCard")
+            .bank_item
+                img(src="images/american-express.png", alt="American Express")
+            .bank_item
+                img(src="images/paypal.png", alt="PayPal")
+            .bank_item
+                img(src="images/bitcoin.png", alt="Bitcoin")
+            .bank_item
+                img(src="images/okpay.png", alt="OkPay")
+            .bank_item
+                img(src="images/amazonpay.png", alt="Amazon Pay")
+        .links
+            ul
+                li
+                    a(href="#") How to pay anonymously
+                        span &#8594;
+                li
+                    a(href="#") Redeem gift card
+                        span &#8594;

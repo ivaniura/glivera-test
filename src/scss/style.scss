@@ -1,0 +1,28 @@
+@import "normalize";
+@import "variables";
+@import "mixins";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #f2f2f2;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #22252e;
+}
+
+.wrapper {
+    background: #fff;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+@import "header";
+@import "main";
+@import "search";
+@import "sidebar";
+@import "footer";

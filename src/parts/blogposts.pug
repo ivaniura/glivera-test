@@ -1,0 +1,54 @@
+-
+    let blogPosts = [
+        {
+            image: 'images/01.jpg',
+            text: 'The Internet Cannot be Trusted – Beamsplitters, Backdoors, and Broken Promises',
+            author: 'Derek Zimmer',
+            date: 'JUL 25, 2018',
+            tags: 'Governments, Networking, Open Source, Privacy, Security'
+        },
+        {
+            image: 'images/02.jpg',
+            text: 'How to get cheaper flights using a VPN',
+            author: 'Jayson',
+            date: 'JUL 24, 2018',
+            tags: 'Guides'
+        },
+        {
+            image: 'images/03.jpg',
+            text: 'Net Neutrality was repealed, but the fight is far from over',
+            author: 'Chris Miller',
+            date: 'JUL 22, 2018',
+            tags: 'Governments, Net Neutrality, News'
+        }
+    ]
+
+each post in blogPosts
+    .post
+        .post__image
+            img(src=post.image, alt=post.text)
+        .post__content
+            .intro_text #{post.text}
+            .details
+                .details__author #{post.author}
+                .details__date #{post.date}
+                .details__tags #{post.tags}
+                .details__comments
+                    i.fa-regular.fa-message
+                    | 0
+
+each post in blogPosts
+    .post.mobile_hidden
+        .post__image
+            img(src=post.image, alt=post.text)
+        .post__content
+            .intro_text #{post.text}
+            .details
+                .details__author #{post.author}
+                .details__date #{post.date}
+                .details__tags #{post.tags}
+                .details__comments
+                    i.fa-regular.fa-message
+                    | 0
+
+button.older_posts Older Posts

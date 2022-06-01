@@ -1,0 +1,39 @@
+.sidebar_block {
+    &>div {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: #EBECED 1px solid;
+    }
+    h3 {
+        font-size: 24px;
+        font-weight: 300;
+        margin-left: 50px;
+        i {
+            position: absolute;
+            font-size: 36px;
+            margin-left: -50px;
+            color: #46b843;
+        }
+        &.no_icon {
+            margin-left: 0;
+        }
+    }
+    ul {
+        list-style: none;
+        padding-left: 15px;
+        li {
+            margin: 15px 0;
+            &::before {
+                content: "\2022";
+                position: absolute;
+                color: #46b843;
+                font-weight: bold;
+                display: inline-block;
+                margin-left: -15px;
+            }
+        }
+    }
+    img {
+        width: 100%;
+    }
+}
